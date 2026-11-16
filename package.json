@@ -1,0 +1,14 @@
+{
+  "name": "flavor-huhobot-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Flavor-HuHoBot-Discord-Bridge download site",
+  "scripts": {
+    "dev": "wrangler pages dev .",
+    "deploy": "wrangler pages deploy . --project-name flavor-huhobot-site"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
