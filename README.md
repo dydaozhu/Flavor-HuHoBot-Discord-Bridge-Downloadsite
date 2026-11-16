@@ -20,7 +20,6 @@ assets/
   download.js              下载页版本列表
 functions/api/releases.js  Pages Function：聚合 GitHub / Modrinth
 _headers                   Cloudflare 响应头
-_redirects                 /download 重写
 wrangler.toml              Pages 配置
 ```
 
@@ -124,7 +123,10 @@ https://huhobot.mcfwq.top/
 https://huhobot.mcfwq.top/download
 ```
 
-`/download` 由 `_redirects` 重写到 `download.html`，URL 保持为 `/download`。
+`/download` 由 Cloudflare Pages 的 pretty URL 自动映射到 `download.html`，不需要 `_redirects`。
+
+> 不要添加 `/download /download.html 200` 或 301 规则。  
+> Pages 会把 `/download.html` 规范化到 `/download`，再重写到 `download.html` 会形成 308 循环。
 
 ## 环境变量
 
